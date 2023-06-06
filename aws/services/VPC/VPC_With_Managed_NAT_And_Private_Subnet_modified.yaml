@@ -483,31 +483,31 @@
         Name: !Sub "${AWS::Region}-${AWS::StackName}-DefaultSecurityGroup"
 
   # 5. Security Group을 생성하고, 22번 port를 open 한다 (ssh 접속을 위해)
-  BastionSecurityGroup:
-    Type: AWS::EC2::SecurityGroup
-    Properties:
-      GroupName: bastion-sg-jhun80.jeong
-      GroupDescription: bation security group
-      VpcId: ##!Ref myVPC
-        Ref: "VPC"
-        
-      SecurityGroupIngress:
-      - CidrIp: 0.0.0.0/0
-        FromPort: "22"
-        ToPort: "22"
-        IpProtocol: tcp
-      - CidrIp: 0.0.0.0/0
-        FromPort: "80"
-        ToPort: "80"
-        IpProtocol: tcp
-      - CidrIp: 0.0.0.0/0
-        FromPort: "443"
-        ToPort: "443"
-        IpProtocol: tcp
-      - CidrIp: 0.0.0.0/0
-        FromPort: "3389"
-        ToPort: "3389"
-        IpProtocol: tcp  
-      Tags:
-        - Key: Name
-          Value: jhun80.bastion-sg
+#  BastionSecurityGroup:
+#    Type: AWS::EC2::SecurityGroup
+#    Properties:
+#      GroupName: bastion-sg-jhun80.jeong
+#      GroupDescription: bation security group
+#      VpcId: ##!Ref myVPC
+#        Ref: "VPC"
+#        
+#      SecurityGroupIngress:
+#      - CidrIp: 0.0.0.0/0
+#        FromPort: "22"
+#        ToPort: "22"
+#        IpProtocol: tcp
+#      - CidrIp: 0.0.0.0/0
+#        FromPort: "80"
+#        ToPort: "80"
+#        IpProtocol: tcp
+#      - CidrIp: 0.0.0.0/0
+#        FromPort: "443"
+#        ToPort: "443"
+#        IpProtocol: tcp
+#      - CidrIp: 0.0.0.0/0
+#        FromPort: "3389"
+#        ToPort: "3389"
+#        IpProtocol: tcp  
+#      Tags:
+#        - Key: Name
+#          Value: jhun80.bastion-sg
